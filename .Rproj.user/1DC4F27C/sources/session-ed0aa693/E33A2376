@@ -1,0 +1,27 @@
+{
+    "id": "E33A2376",
+    "path": "D:/Market-Analysis/market_analysis.R",
+    "project_path": "market_analysis.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1677659511837.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "109,30",
+        "scrollLine": "93",
+        "notebook_format": "html_document"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1677768556,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1677768556172,
+    "read_only": false,
+    "read_only_alternatives": []
+}

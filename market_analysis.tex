@@ -1,0 +1,803 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={market\_analysis.R},
+  pdfauthor={admin},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{market\_analysis.R}
+\author{admin}
+\date{2023-03-02}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#import the data sets}
+\FunctionTok{library}\NormalTok{(readr)}
+
+\NormalTok{Subscription }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"Subscription.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 298 Columns: 7
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (4): gender, ownHome, subscribe, Segment
+## dbl (3): age, income, kids
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{amusement }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"amusement.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 500 Columns: 8
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (1): weekend
+## dbl (7): num.child, distance, rides, games, wait, clean, overall
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# PART1 {-} Working with Subscription data set}
+\CommentTok{\# QUESTION 1}
+
+\CommentTok{\# i. number of rows and columns}
+\FunctionTok{dim}\NormalTok{(Subscription)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 298   7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ii. data type of each variable}
+
+\FunctionTok{str}\NormalTok{(Subscription)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## spc_tbl_ [298 x 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ age      : num [1:298] 23.3 25.9 24.7 61.3 24.2 ...
+##  $ gender   : chr [1:298] "Male" "Female" "Female" "Female" ...
+##  $ income   : num [1:298] 11985 12406 12545 15347 15493 ...
+##  $ kids     : num [1:298] 1 0 1 0 1 0 0 3 2 0 ...
+##  $ ownHome  : chr [1:298] "ownNo" "ownNo" "ownNo" "ownYes" ...
+##  $ subscribe: chr [1:298] "subNo" "subNo" "subYes" "subNo" ...
+##  $ Segment  : chr [1:298] "Urban hip" "Urban hip" "Urban hip" "Travelers" ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   age = col_double(),
+##   ..   gender = col_character(),
+##   ..   income = col_double(),
+##   ..   kids = col_double(),
+##   ..   ownHome = col_character(),
+##   ..   subscribe = col_character(),
+##   ..   Segment = col_character()
+##   .. )
+##  - attr(*, "problems")=<externalptr>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# iii. first and last 3 rows}
+\FunctionTok{head}\NormalTok{(Subscription, }\AttributeTok{n =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 7
+##     age gender income  kids ownHome subscribe Segment  
+##   <dbl> <chr>   <dbl> <dbl> <chr>   <chr>     <chr>    
+## 1  23.3 Male   11985.     1 ownNo   subNo     Urban hip
+## 2  25.9 Female 12406.     0 ownNo   subNo     Urban hip
+## 3  24.7 Female 12545.     1 ownNo   subYes    Urban hip
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tail}\NormalTok{(Subscription, }\AttributeTok{n =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 7
+##     age gender  income  kids ownHome subscribe Segment  
+##   <dbl> <chr>    <dbl> <dbl> <chr>   <chr>     <chr>    
+## 1  54.9 Female 106430.     0 ownYes  subNo     Travelers
+## 2  64.6 Male   113457.     0 ownNo   subNo     Travelers
+## 3  58.9 Male   114278.     0 ownYes  subNo     Travelers
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# iv. Check for any missing values}
+\FunctionTok{any}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(Subscription))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# v. converting character type variables to factor type}
+\NormalTok{Subscription}\SpecialCharTok{$}\NormalTok{gender }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{gender)}
+\NormalTok{Subscription}\SpecialCharTok{$}\NormalTok{ownHome }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{ownHome)}
+\NormalTok{Subscription}\SpecialCharTok{$}\NormalTok{subscribe }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{subscribe)}
+\NormalTok{Subscription}\SpecialCharTok{$}\NormalTok{Segment }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{Segment)}
+
+\FunctionTok{class}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{gender)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# vi. Summary statistics on the data}
+\FunctionTok{summary}\NormalTok{(Subscription)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       age           gender        income            kids         ownHome   
+##  Min.   :19.26   Female:157   Min.   : 11985   Min.   :0.000   ownNo :159  
+##  1st Qu.:32.97   Male  :141   1st Qu.: 39966   1st Qu.:0.000   ownYes:139  
+##  Median :39.43                Median : 52200   Median :1.000               
+##  Mean   :41.12                Mean   : 51298   Mean   :1.279               
+##  3rd Qu.:47.85                3rd Qu.: 61437   3rd Qu.:2.000               
+##  Max.   :80.49                Max.   :114278   Max.   :7.000               
+##   subscribe         Segment   
+##  subNo :258   Moving up : 70  
+##  subYes: 40   Suburb mix:100  
+##               Travelers : 78  
+##               Urban hip : 50  
+##                               
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QUESTION TWO}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+## 
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{subscribed }\OtherTok{\textless{}{-}}\NormalTok{ Subscription }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(subscribe }\SpecialCharTok{==} \StringTok{"subYes"}\NormalTok{)}
+
+\FunctionTok{head}\NormalTok{(subscribed)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 7
+##     age gender income  kids ownHome subscribe Segment  
+##   <dbl> <fct>   <dbl> <dbl> <fct>   <fct>     <fct>    
+## 1  24.7 Female 12545.     1 ownNo   subYes    Urban hip
+## 2  22.8 Female 15911.     0 ownNo   subYes    Urban hip
+## 3  23.2 Male   17510.     1 ownNo   subYes    Urban hip
+## 4  21.2 Male   18419.     1 ownYes  subYes    Urban hip
+## 5  24.7 Male   18458.     1 ownNo   subYes    Urban hip
+## 6  25.2 Female 20126.     2 ownNo   subYes    Urban hip
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(subscribed)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       age           gender       income           kids        ownHome  
+##  Min.   :21.24   Female:21   Min.   :12545   Min.   :0.00   ownNo :22  
+##  1st Qu.:29.69   Male  :19   1st Qu.:35155   1st Qu.:0.00   ownYes:18  
+##  Median :36.57               Median :49107   Median :1.00              
+##  Mean   :39.65               Mean   :45934   Mean   :1.25              
+##  3rd Qu.:47.02               3rd Qu.:56145   3rd Qu.:2.00              
+##  Max.   :80.49               Max.   :82077   Max.   :6.00              
+##   subscribe        Segment  
+##  subNo : 0   Moving up :14  
+##  subYes:40   Suburb mix: 6  
+##              Travelers :10  
+##              Urban hip :10  
+##                             
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{not\_subscribed }\OtherTok{\textless{}{-}}\NormalTok{ Subscription }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(subscribe }\SpecialCharTok{==} \StringTok{"subNo"}\NormalTok{)}
+
+\FunctionTok{head}\NormalTok{(not\_subscribed)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 7
+##     age gender income  kids ownHome subscribe Segment  
+##   <dbl> <fct>   <dbl> <dbl> <fct>   <fct>     <fct>    
+## 1  23.3 Male   11985.     1 ownNo   subNo     Urban hip
+## 2  25.9 Female 12406.     0 ownNo   subNo     Urban hip
+## 3  61.3 Female 15347.     0 ownYes  subNo     Travelers
+## 4  24.2 Male   15493.     1 ownNo   subNo     Urban hip
+## 5  22.3 Male   16341.     0 ownNo   subNo     Urban hip
+## 6  21.4 Male   16646.     3 ownNo   subNo     Urban hip
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(not\_subscribed)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       age           gender        income            kids         ownHome   
+##  Min.   :19.26   Female:136   Min.   : 11985   Min.   :0.000   ownNo :137  
+##  1st Qu.:33.16   Male  :122   1st Qu.: 40637   1st Qu.:0.000   ownYes:121  
+##  Median :39.78                Median : 52883   Median :1.000               
+##  Mean   :41.35                Mean   : 52130   Mean   :1.283               
+##  3rd Qu.:47.85                3rd Qu.: 62830   3rd Qu.:2.000               
+##  Max.   :78.20                Max.   :114278   Max.   :7.000               
+##   subscribe         Segment  
+##  subNo :258   Moving up :56  
+##  subYes:  0   Suburb mix:94  
+##               Travelers :68  
+##               Urban hip :40  
+##                              
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QUESTION 3}
+\CommentTok{\# create cross{-}tables and proportion{-}based cross tables between}
+
+\CommentTok{\# i. subscription status and home ownership}
+\NormalTok{home\_owner\_table }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{subscribe, Subscription}\SpecialCharTok{$}\NormalTok{ownHome)}
+\NormalTok{home\_owner\_table}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         
+##          ownNo ownYes
+##   subNo    137    121
+##   subYes    22     18
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{home\_owner\_prop\_table }\OtherTok{\textless{}{-}} \FunctionTok{prop.table}\NormalTok{(home\_owner\_table, }\AttributeTok{margin =} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{home\_owner\_prop\_table}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         
+##              ownNo    ownYes
+##   subNo  0.5310078 0.4689922
+##   subYes 0.5500000 0.4500000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{home\_owner\_prop\_table\_2 }\OtherTok{\textless{}{-}} \FunctionTok{prop.table}\NormalTok{(home\_owner\_table, }\AttributeTok{margin =} \DecValTok{2}\NormalTok{)}
+\NormalTok{home\_owner\_prop\_table\_2 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         
+##              ownNo    ownYes
+##   subNo  0.8616352 0.8705036
+##   subYes 0.1383648 0.1294964
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ii. subscription status and gender}
+\NormalTok{gender\_cross\_table }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{subscribe, Subscription}\SpecialCharTok{$}\NormalTok{gender)}
+\NormalTok{gender\_cross\_table}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         
+##          Female Male
+##   subNo     136  122
+##   subYes     21   19
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gender\_prop\_table }\OtherTok{\textless{}{-}} \FunctionTok{prop.table}\NormalTok{(gender\_cross\_table, }\AttributeTok{margin =} \DecValTok{1}\NormalTok{)}
+\NormalTok{gender\_prop\_table}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         
+##             Female      Male
+##   subNo  0.5271318 0.4728682
+##   subYes 0.5250000 0.4750000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gender\_prop\_table\_2 }\OtherTok{\textless{}{-}} \FunctionTok{prop.table}\NormalTok{(gender\_cross\_table, }\AttributeTok{margin =} \DecValTok{2}\NormalTok{)}
+\NormalTok{gender\_prop\_table\_2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         
+##             Female      Male
+##   subNo  0.8662420 0.8652482
+##   subYes 0.1337580 0.1347518
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QUESTION 4}
+\FunctionTok{levels}\NormalTok{(Subscription}\SpecialCharTok{$}\NormalTok{Segment)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Moving up"  "Suburb mix" "Travelers"  "Urban hip"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# a) what the average income, average number of kids, and average age is for each segment}
+
+\CommentTok{\# segment {-} Moving up}
+\NormalTok{Moving\_up\_stats }\OtherTok{\textless{}{-}}\NormalTok{ Subscription }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Segment }\SpecialCharTok{==} \StringTok{"Moving up"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{average\_income =} \FunctionTok{mean}\NormalTok{(income), }\AttributeTok{average\_no\_kids =} \FunctionTok{mean}\NormalTok{(kids), }
+            \AttributeTok{average\_age =} \FunctionTok{mean}\NormalTok{(age))}
+
+\NormalTok{Moving\_up\_stats}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 3
+##   average_income average_no_kids average_age
+##            <dbl>           <dbl>       <dbl>
+## 1         53091.            1.91        36.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Suburb mix segement}
+\NormalTok{Sburb\_mix\_stats }\OtherTok{\textless{}{-}}\NormalTok{ Subscription }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Segment }\SpecialCharTok{==} \StringTok{"Suburb mix"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{average\_income =} \FunctionTok{mean}\NormalTok{(income), }\AttributeTok{average\_no\_kids =} \FunctionTok{mean}\NormalTok{(kids), }
+            \AttributeTok{average\_age =} \FunctionTok{mean}\NormalTok{(age))}
+
+\NormalTok{Sburb\_mix\_stats}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 3
+##   average_income average_no_kids average_age
+##            <dbl>           <dbl>       <dbl>
+## 1         55034.            1.92        39.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Travelers Segment}
+\NormalTok{Travelers\_stats }\OtherTok{\textless{}{-}}\NormalTok{ Subscription }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Segment }\SpecialCharTok{==} \StringTok{"Travelers"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{average\_income =} \FunctionTok{mean}\NormalTok{(income), }\AttributeTok{average\_no\_kids =} \FunctionTok{mean}\NormalTok{(kids), }
+            \AttributeTok{average\_age =} \FunctionTok{mean}\NormalTok{(age))}
+
+\NormalTok{Travelers\_stats}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 3
+##   average_income average_no_kids average_age
+##            <dbl>           <dbl>       <dbl>
+## 1         63885.               0        58.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Urban hip segment}
+\NormalTok{Urban\_hip\_stats }\OtherTok{\textless{}{-}}\NormalTok{ Subscription }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Segment }\SpecialCharTok{==} \StringTok{"Urban hip"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{average\_income =} \FunctionTok{mean}\NormalTok{(income), }\AttributeTok{average\_no\_kids =} \FunctionTok{mean}\NormalTok{(kids), }
+            \AttributeTok{average\_age =} \FunctionTok{mean}\NormalTok{(age))}
+
+\NormalTok{Urban\_hip\_stats}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 3
+##   average_income average_no_kids average_age
+##            <dbl>           <dbl>       <dbl>
+## 1         21682.             1.1        23.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QUESTION FIVE}
+
+\CommentTok{\# i) a histogram for income and discuss its distribution}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\FunctionTok{ggplot}\NormalTok{(Subscription,}\FunctionTok{aes}\NormalTok{(income)) }\SpecialCharTok{+} \FunctionTok{geom\_histogram}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}
+  \AttributeTok{title =} \StringTok{"A histogram for income "}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ii) a histogram for age}
+\FunctionTok{ggplot}\NormalTok{(Subscription,}\FunctionTok{aes}\NormalTok{(age)) }\SpecialCharTok{+} \FunctionTok{geom\_histogram}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}
+  \AttributeTok{title =} \StringTok{"A histogram for age "}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# iii) a boxplot for income vs. customer segments }
+\FunctionTok{ggplot}\NormalTok{(Subscription, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ income, }\AttributeTok{y =}\NormalTok{ Segment )) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"A Boxplot for Income vs Customer Segments"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# iv)  a boxplot for age vs. customer segments}
+\FunctionTok{ggplot}\NormalTok{(Subscription, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age, }\AttributeTok{y =}\NormalTok{ Segment )) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"A Boxplot for Age vs Customer Segments"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# PART 2 {-} Relationship between continuous variables}
+\CommentTok{\# Using the amusements.csv data set}
+
+\CommentTok{\# QUESTION 7}
+
+\CommentTok{\# i) the number of rows (respondents) and number of columns (variables)}
+\FunctionTok{dim}\NormalTok{(amusement)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 500   8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ii) the data types of each variable}
+\FunctionTok{str}\NormalTok{(amusement)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## spc_tbl_ [500 x 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ weekend  : chr [1:500] "yes" "yes" "no" "yes" ...
+##  $ num.child: num [1:500] 0 2 1 0 4 5 1 0 0 3 ...
+##  $ distance : num [1:500] 114.6 27 63.3 25.9 54.7 ...
+##  $ rides    : num [1:500] 87 87 85 88 84 81 77 82 90 88 ...
+##  $ games    : num [1:500] 73 78 80 72 87 79 73 70 88 86 ...
+##  $ wait     : num [1:500] 60 76 70 66 74 48 58 70 79 55 ...
+##  $ clean    : num [1:500] 89 87 88 89 87 79 85 83 95 88 ...
+##  $ overall  : num [1:500] 47 65 61 37 68 27 40 30 58 36 ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   weekend = col_character(),
+##   ..   num.child = col_double(),
+##   ..   distance = col_double(),
+##   ..   rides = col_double(),
+##   ..   games = col_double(),
+##   ..   wait = col_double(),
+##   ..   clean = col_double(),
+##   ..   overall = col_double()
+##   .. )
+##  - attr(*, "problems")=<externalptr>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# iii) whether there is any missing value in the data set}
+\FunctionTok{any}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(amusement))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# iv) run summary statistics of the data set.}
+\FunctionTok{summary}\NormalTok{(amusement)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    weekend            num.child        distance            rides       
+##  Length:500         Min.   :0.000   Min.   :  0.5267   Min.   : 72.00  
+##  Class :character   1st Qu.:0.000   1st Qu.: 10.3181   1st Qu.: 82.00  
+##  Mode  :character   Median :2.000   Median : 19.0191   Median : 86.00  
+##                     Mean   :1.738   Mean   : 31.0475   Mean   : 85.85  
+##                     3rd Qu.:3.000   3rd Qu.: 39.5821   3rd Qu.: 90.00  
+##                     Max.   :5.000   Max.   :239.1921   Max.   :100.00  
+##      games             wait           clean          overall      
+##  Min.   : 57.00   Min.   : 40.0   Min.   : 74.0   Min.   :  6.00  
+##  1st Qu.: 73.00   1st Qu.: 62.0   1st Qu.: 84.0   1st Qu.: 40.00  
+##  Median : 78.00   Median : 70.0   Median : 88.0   Median : 50.00  
+##  Mean   : 78.67   Mean   : 69.9   Mean   : 87.9   Mean   : 51.26  
+##  3rd Qu.: 85.00   3rd Qu.: 77.0   3rd Qu.: 91.0   3rd Qu.: 62.00  
+##  Max.   :100.00   Max.   :100.0   Max.   :100.0   Max.   :100.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QUESTION 8}
+\FunctionTok{library}\NormalTok{(car)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: carData
+## 
+## Attaching package: 'car'
+## 
+## The following object is masked from 'package:dplyr':
+## 
+##     recode
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{scatterplotMatrix}\NormalTok{(}\AttributeTok{formula=}\SpecialCharTok{\textasciitilde{}}\NormalTok{num.child}\SpecialCharTok{+}\NormalTok{distance}\SpecialCharTok{+}\NormalTok{rides}\SpecialCharTok{+}\NormalTok{games}\SpecialCharTok{+}\NormalTok{wait}\SpecialCharTok{+}\NormalTok{clean}\SpecialCharTok{+}\NormalTok{overall,}\AttributeTok{data=}\NormalTok{amusement)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# transform variables which are not normaly distributed}
+\NormalTok{amusement}\SpecialCharTok{$}\NormalTok{num.child }\OtherTok{\textless{}{-}} \FunctionTok{log}\NormalTok{(amusement}\SpecialCharTok{$}\NormalTok{num.child)}
+\NormalTok{amusement}\SpecialCharTok{$}\NormalTok{distance }\OtherTok{\textless{}{-}} \FunctionTok{log}\NormalTok{(amusement}\SpecialCharTok{$}\NormalTok{distance)}
+
+\FunctionTok{hist}\NormalTok{(amusement}\SpecialCharTok{$}\NormalTok{num.child, }\AttributeTok{probability =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(amusement}\SpecialCharTok{$}\NormalTok{distance, }\AttributeTok{probability =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-7.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QUESTION 9}
+\CommentTok{\# Plot  a scatter plot for overall satisfaction and rides satisfaction}
+
+\FunctionTok{plot}\NormalTok{(amusement}\SpecialCharTok{$}\NormalTok{rides, amusement}\SpecialCharTok{$}\NormalTok{overall, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{main =} \StringTok{\textquotesingle{}Scatterplot of rides and overall satisfaction\textquotesingle{}}
+\NormalTok{     , }\AttributeTok{xlab =} \StringTok{\textquotesingle{}rides\textquotesingle{}}\NormalTok{, }\AttributeTok{ylab =} \StringTok{\textquotesingle{}overall satisfaction\textquotesingle{}}\NormalTok{)}
+
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(amusement}\SpecialCharTok{$}\NormalTok{overall}\SpecialCharTok{\textasciitilde{}}\NormalTok{amusement}\SpecialCharTok{$}\NormalTok{rides ))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-8.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QUESTION 10 {-}  Run a correlation matrix with corrplot.mixed() }
+\FunctionTok{library}\NormalTok{(corrplot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## corrplot 0.92 loaded
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cor\_matrix }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(amusement[, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{8}\NormalTok{],}\AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{)}
+\NormalTok{cor\_matrix}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           num.child     distance       rides       games       wait      clean
+## num.child         1          NaN         NaN         NaN        NaN        NaN
+## distance        NaN  1.000000000 -0.01102768 0.001868728 0.01746093 0.02212374
+## rides           NaN -0.011027676  1.00000000 0.455185111 0.31419951 0.78956505
+## games           NaN  0.001868728  0.45518511 1.000000000 0.29910498 0.51697987
+## wait            NaN  0.017460929  0.31419951 0.299104980 1.00000000 0.36788467
+## clean           NaN  0.022123740  0.78956505 0.516979874 0.36788467 1.00000000
+## overall         NaN  0.076327893  0.58598628 0.437467872 0.57262166 0.63939818
+##              overall
+## num.child        NaN
+## distance  0.07632789
+## rides     0.58598628
+## games     0.43746787
+## wait      0.57262166
+## clean     0.63939818
+## overall   1.00000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{corrplot}\NormalTok{(cor\_matrix, }\AttributeTok{method =} \StringTok{"ellipse"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{market_analysis_files/figure-latex/unnamed-chunk-1-9.pdf}
+
+\end{document}
